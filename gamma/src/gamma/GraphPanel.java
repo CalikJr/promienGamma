@@ -1,7 +1,9 @@
 package gamma;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
@@ -23,7 +25,8 @@ public class GraphPanel extends JPanel{
 	JFreeChart chart1, chart2;
 	GraphPanel(){
 		setSize(400, 800);
-		setLayout(new GridLayout(4,1));
+		setBackground(Color.white);
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		JPanel graphpanel1 = new JPanel();
 		graphpanel1.setSize(200, 150);
@@ -39,12 +42,14 @@ public class GraphPanel extends JPanel{
 		JButton savebutton = new JButton("savebutton");
 		
 		JPanel graphbuttons1 = new JPanel();
+		graphbuttons1.setBackground(this.getBackground());
 		graphbuttons1.setLayout(new BoxLayout(graphbuttons1, BoxLayout.X_AXIS));
 		graphbuttons1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		graphbuttons1.add(Box.createHorizontalGlue());
 		graphbuttons1.add(loadbutton);
 		graphbuttons1.add(Box.createRigidArea(new Dimension(10, 0)));
 		graphbuttons1.add(savebutton);
+		add(graphbuttons1);
 		
 		JPanel graphpanel2 = new JPanel();
 		graphpanel2.setSize(100, 50);
@@ -56,13 +61,15 @@ public class GraphPanel extends JPanel{
 		graphpanel2.add(graphpaint2);
 		add(graphpanel2);
 		
-		Button savebutton2 = new Button("savebutton");
+		JButton savebutton2 = new JButton("savebutton");
 		
 		JPanel graphbuttons2 = new JPanel();
+		graphbuttons2.setBackground(this.getBackground());
 		graphbuttons2.setLayout(new BoxLayout(graphbuttons2, BoxLayout.X_AXIS));
 		graphbuttons2.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 		graphbuttons2.add(Box.createHorizontalGlue());
 		graphbuttons2.add(Box.createRigidArea(new Dimension(10, 0)));
 		graphbuttons2.add(savebutton2);
+		add(graphbuttons2);
 	}
 }
