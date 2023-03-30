@@ -1,5 +1,6 @@
 package gamma;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -32,8 +33,8 @@ public class GraphPanel extends JPanel{
 		graphpanel1.add(graphpaint1);
 		add(graphpanel1);
 		
-		ImageButton loadbutton = new ImageButton("./src/pictures/2348196-200.png");
-		JButton savebutton = new JButton("savebutton");
+		ImageButton loadbutton = new ImageButton("./src/pictures/load_icon.png");
+		ImageButton savebutton = new ImageButton("./src/pictures/save_icon.png");
 		
 		JPanel graphbuttons1 = new JPanel();
 		graphbuttons1.setBackground(this.getBackground());
@@ -41,7 +42,7 @@ public class GraphPanel extends JPanel{
 		graphbuttons1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		graphbuttons1.add(Box.createHorizontalGlue());
 		graphbuttons1.add(loadbutton);
-		graphbuttons1.add(Box.createRigidArea(new Dimension(10, 0)));
+		graphbuttons1.add(Box.createRigidArea(new Dimension(300, 0)));
 		graphbuttons1.add(savebutton);
 		add(graphbuttons1);
 		
@@ -55,12 +56,13 @@ public class GraphPanel extends JPanel{
 		graphpanel2.add(graphpaint2);
 		add(graphpanel2);
 		
-		JButton savebutton2 = new JButton("savebutton");
+		ImageButton savebutton2 = new ImageButton("./src/pictures/save_icon.png");
+		
 		
 		JPanel graphbuttons2 = new JPanel();
 		graphbuttons2.setBackground(this.getBackground());
 		graphbuttons2.setLayout(new BoxLayout(graphbuttons2, BoxLayout.X_AXIS));
-		graphbuttons2.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
+		graphbuttons2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		graphbuttons2.add(Box.createHorizontalGlue());
 		graphbuttons2.add(Box.createRigidArea(new Dimension(10, 0)));
 		graphbuttons2.add(savebutton2);
