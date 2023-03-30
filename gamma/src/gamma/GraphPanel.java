@@ -1,12 +1,7 @@
 package gamma;
 
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -16,7 +11,6 @@ import javax.swing.JPanel;
 
 
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.statistics.HistogramDataset;
@@ -38,7 +32,7 @@ public class GraphPanel extends JPanel{
 		graphpanel1.add(graphpaint1);
 		add(graphpanel1);
 		
-		JButton loadbutton = new JButton("loadbutton");
+		ImageButton loadbutton = new ImageButton("./src/pictures/2348196-200.png");
 		JButton savebutton = new JButton("savebutton");
 		
 		JPanel graphbuttons1 = new JPanel();
