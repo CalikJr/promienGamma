@@ -18,7 +18,8 @@ public class GraphPanel extends JPanel{
 	static JFreeChart chart1, chart2;
 	static ImageButton savebutton, loadbutton, savebutton2;
 	static JPanel graphbuttons1, graphbuttons2, graphpanel1, graphpanel2;
-	static GraphPaint graphpaint1, graphpaint2;
+	static GraphPaint1 graphpaint1;
+	static GraphPaint2 graphpaint2;
 	static HistogramDataset dataset1, dataset2;
 	GraphPanel(){
 		setSize(400, 700);
@@ -31,7 +32,7 @@ public class GraphPanel extends JPanel{
         dataset1.addSeries("key", values1, 20);
 		chart1 = ChartFactory.createHistogram("Wykres aktualnego pomiaru", "Grubość absorbenta [mm]", "N-liczba zliczeń", dataset1, PlotOrientation.VERTICAL, false, false, false);
 		chart1.setBackgroundPaint(new Color(255, 255, 255));
-		graphpaint1 = new GraphPaint(chart1.createBufferedImage(400, 300));
+		graphpaint1 = new GraphPaint1();
 		add(graphpaint1);
 		
 		loadbutton = new ImageButton("./src/pictures/load_icon.png",new Color(255, 255, 255));
@@ -52,7 +53,7 @@ public class GraphPanel extends JPanel{
         dataset2.addSeries("keys", values2, 20);
 		chart2 = ChartFactory.createHistogram("Baza wykresów w jednym", "Grubość absorbenta [mm]", "N-liczba zliczeń", dataset2, PlotOrientation.VERTICAL, false, false, false);
 		chart2.setBackgroundPaint(new Color(255, 255, 255));
-		graphpaint2 = new GraphPaint(chart2.createBufferedImage(400, 300));
+		graphpaint2 = new GraphPaint2();
 		add(graphpaint2);
 		
 		
