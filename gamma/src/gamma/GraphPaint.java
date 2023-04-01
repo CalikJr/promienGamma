@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 public class GraphPaint extends JPanel{
-	private BufferedImage image;
+	 static BufferedImage image;
 	 public GraphPaint(BufferedImage Img) {
 	 super();
 	 // Plik umieszczony w podpakiecie "obrazki"

@@ -13,9 +13,11 @@ import javax.swing.border.LineBorder;
 
 public class ImageButton extends JButton{
 	ImageIcon image;
-	ImageButton(String url){
+	Color color;
+	ImageButton(String url, Color c){
+		color = c;
 		this.setForeground(Color.BLACK);
-		this.setBackground(Color.WHITE);
+		this.setBackground(color);
 		Border line = new LineBorder(Color.LIGHT_GRAY);
 		  Border margin = new EmptyBorder(5, 15, 5, 15);
 		  Border compound = new CompoundBorder(line, margin);

@@ -3,15 +3,17 @@ package gamma;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class MainPanel extends JPanel{
-	JPanel bottom, top, center;
+	static JPanel bottom, top, center, speedbuttons;
+	static ImageButton x1, x05, x01, settingbutton, infobutton;
 	MainPanel(){
 		setSize(800, 800);
 		setLayout(new BorderLayout());
@@ -26,30 +28,35 @@ public class MainPanel extends JPanel{
 		top.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		center = new JPanel();
 		
-		ImageButton settingbutton = new ImageButton("./src/pictures/settings_icon.png");
+		settingbutton = new ImageButton("./src/pictures/settings_icon.png",new Color(255, 255, 255));
 		settingbutton.setBounds(10, 10, settingbutton.getWidth(), settingbutton.getHeight());
 		bottom.add(settingbutton, BorderLayout.LINE_START);
-		JPanel speedbuttons = new JPanel();
+		settingbutton.addActionListener(new SettingsFrame());
+		
+		
+		speedbuttons = new JPanel();
 		speedbuttons.setLayout(new BoxLayout(speedbuttons, BoxLayout.X_AXIS));
 		speedbuttons.setOpaque(false);
 		
 		bottom.add(speedbuttons, BorderLayout.LINE_END);
-		ImageButton x1 = new ImageButton("./src/pictures/x1.png");
-		speedbuttons.add(x1);
+		x01 = new ImageButton("./src/pictures/x01.png", new Color(255, 255, 255));
+		speedbuttons.add(x01);
 		speedbuttons.add(Box.createHorizontalGlue());
 		speedbuttons.add(Box.createRigidArea(new Dimension(10, 0)));
-		ImageButton x05 = new ImageButton("./src/pictures/x05.png");
+		x05 = new ImageButton("./src/pictures/x05.png", new Color(255, 255, 255));
 		speedbuttons.add(x05);
 		speedbuttons.add(Box.createHorizontalGlue());
 		speedbuttons.add(Box.createRigidArea(new Dimension(10, 0)));
-		ImageButton x01 = new ImageButton("./src/pictures/x01.png");
-		speedbuttons.add(x01);
+		x1 = new ImageButton("./src/pictures/x1.png", new Color(255, 255, 255));
+		speedbuttons.add(x1);
 		
 		
-		ImageButton infobutton = new ImageButton("./src/pictures/info_icon.png");
+		
+		infobutton = new ImageButton("./src/pictures/info_icon.png", new Color(255, 255, 255));
 		infobutton.setBackground(new Color(11, 139, 255));
 		top.add(infobutton, BorderLayout.LINE_START);
 		add(top, BorderLayout.NORTH);
 		add(bottom, BorderLayout.SOUTH);
 	}
+
 }
