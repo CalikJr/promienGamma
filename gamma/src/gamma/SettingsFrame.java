@@ -36,7 +36,7 @@ public class SettingsFrame implements ActionListener{
 	    ImageIcon icon = new ImageIcon("./src/pictures/settings_icon.png");
 	    frame.setIconImage(icon.getImage());
 	    tabbedpane = new JTabbedPane();
-	    UIManager.put("TabbedPane.selected", new Color(200, 200, 200));
+	    UIManager.put("TabbedPane.selected", new Color(150, 150, 150));
 	    tabbedpane.setSize(frame.getSize());
 	    panel1 = new JPanel();
 	    panel1.setSize(500, 300);
