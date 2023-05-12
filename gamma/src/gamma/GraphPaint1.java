@@ -1,5 +1,7 @@
 package gamma;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -10,7 +12,14 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
+import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.StandardChartTheme;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.StandardBarPainter;
+import org.jfree.data.statistics.HistogramDataset;
+import org.jfree.ui.RectangleInsets;
 
 public class GraphPaint1 extends JPanel implements MouseListener{
 	 private static BufferedImage Image;

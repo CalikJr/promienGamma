@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 public class Main extends JFrame{
 	static MainPanel mainpanel;
@@ -22,7 +23,12 @@ public class Main extends JFrame{
 		
 	}
 	public static void main(String[] args) {
-		Main Myframe = new Main();
+		SwingUtilities.invokeLater(
+				 new Runnable(){
+				public void run() {
+				 Main Myframe = new Main();
 		Myframe.setVisible(true);
+				}
+			});
 	}
 }
