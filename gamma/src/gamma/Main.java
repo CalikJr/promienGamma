@@ -2,6 +2,10 @@ package gamma;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -27,7 +31,15 @@ public class Main extends JFrame{
 				 new Runnable(){
 				public void run() {
 				 Main Myframe = new Main();
-		Myframe.setVisible(true);
+				 WindowListener listener = new WindowAdapter() {
+					   public void windowClosing(WindowEvent evt) {
+					      Frame frame = (Frame) evt.getSource();
+					      System.out.println("Closing = "+frame.getTitle());
+					      AnimationButton.IsRunning = false;
+					   }
+					};
+					Myframe.addWindowListener(listener);
+					Myframe.setVisible(true);
 				}
 			});
 	}
