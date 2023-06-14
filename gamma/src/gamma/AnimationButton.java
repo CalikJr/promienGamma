@@ -14,6 +14,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -46,9 +47,35 @@ public class AnimationButton extends JButton implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(this.getText().compareTo("START")==0) {
-			this.setText("STOP");
-			IsRunning = true;
-			simulation = new SimulationThread();
+			if(AnimationPanel.Al.isChoosen == true) {
+				if(AnimationPanel.Co.isChoosen == true) {
+					SimulationThread.mi = 0.1404;
+					this.setText("STOP");
+					IsRunning = true;
+					simulation = new SimulationThread(); 
+				}
+				else if(AnimationPanel.Cs.isChoosen == true) {
+					SimulationThread.mi = 0.1539;
+					this.setText("STOP");
+					IsRunning = true;
+					simulation = new SimulationThread();
+				}
+			} else if(AnimationPanel.Pb .isChoosen == true) {
+				if(AnimationPanel.Co.isChoosen == true) {
+					SimulationThread.mi = 0.61236;
+					this.setText("STOP");
+					IsRunning = true;
+					simulation = new SimulationThread();
+				}
+				else if(AnimationPanel.Cs.isChoosen == true) {
+					SimulationThread.mi = 1.0206;
+					this.setText("STOP");
+					IsRunning = true;
+					simulation = new SimulationThread();
+				}
+			} else {
+				JOptionPane.showMessageDialog(Main.mainpanel, "Nie wybrałeś absorbenta lub zródła!");
+			}
 		}
 		else {
 			this.setText("START");
